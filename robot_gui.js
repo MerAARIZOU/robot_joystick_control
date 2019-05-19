@@ -391,7 +391,7 @@ function pubCmdVel() {
 
     cmdVelPub.publish(cmdVelMsg);
 
-    updateCmdVelMarker();
+    //updateCmdVelMarker();
 
     writeMessageById("baseMessages", " vx: " + Math.round(vx * 100)/100 + ", vz: " + Math.round(vz*100)/100);
 }
@@ -458,7 +458,7 @@ function updateBasePadMarker(vx, vz) {
     writeMessageById("baseMessages", " vx: " + Math.round(vx * 100)/100 + ", vz: " + Math.round(vz*100)/100);
 }
 
-function updateCmdVelMarker() {
+/*function updateCmdVelMarker() {
     var x = videoStageWidth / 2 - vz * 100 * videoScale;
     var y = videoStageHeight - vx * 500 * videoScale - 100;
 
@@ -467,7 +467,7 @@ function updateCmdVelMarker() {
     cmdVelMarker.setPoints([videoStageWidth/2, videoStageHeight, x, y]);
 
     // videoMarkerLayer.draw();
-}
+}*/
 
 function getParam(param) {
     var paramValueResult = document.getElementById('getParamResult');

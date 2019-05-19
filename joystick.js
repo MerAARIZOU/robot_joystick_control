@@ -1,7 +1,7 @@
 var Joystick	= function(opts)
 {
 
-	//init_ros();
+	init_ros();
 	/*opts			= opts			|| {};
 	this._container		= opts.container	|| document.body;
 	this._strokeStyle	= opts.strokeStyle	|| 'cyan';
@@ -108,7 +108,7 @@ document.getElementById("rosbridgePort").value = rosbridgePort;
     	y: basePadHeight/2,
     	radius: 40  ,
     	listening: false,
-    	fill: "yellow",
+    	fill: "grey",
     	stroke: "black",
     	strokeWidth: 1
 	});

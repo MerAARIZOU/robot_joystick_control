@@ -1,30 +1,17 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		
-		<script type="text/javascript" src="three.min.js"></script>
-    	<script type="text/javascript" src="roslib.js"></script>
-    	<script type="text/javascript" src="ros3d.js"></script>
-    	<script type="text/javascript" src="ColladaLoader.min.js"></script>
-    	<script type="text/javascript" src="ColladaLoader2.min.js"></script>
-    	<script type="text/javascript" src="STLLoader.min.js"></script>
-    	<script type="text/javascript" src="eventemitter2.min.js"></script>
-    	<script type="text/javascript" src="virtualjoystick.js"></script>
-    	<script type="text/javascript" src="control.js"></script>
-    	<script type="text/javascript">
-   function init() {
-      function waitForDOM() {
-	  var video = document.getElementById('videoCanvas');
-	  var basePad = document.getElementById('baseContainer');
-          if (video == null || basePad == null) {
-	      setTimeout(waitForDOM, 100);
-          }
-      }
-       waitForDOM();
-   }
-   </script> 
-	</head>
+		<script src="three.min.js"></script>
+  <script src="ColladaLoader.min.js"></script>
+  <script src="ColladaLoader2.min.js"></script>
+  <script src="STLLoader.min.js"></script>
+  <script src="eventemitter2.min.js"></script>
+  <script src="roslib.js"></script>
+  <script src="ros3d.js"></script>
+  <script src="joystick.js"></script>
+  <script src="robot_gui.js"></script>
+  <script src="kinetic-v5.1.0.min.js"></script>	
+  </head>
 	<body >
 		<table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-top:10px;">
   <tr>
@@ -56,7 +43,7 @@
 
     <fieldset><legend>Base Control</legend>
           <div id="baseMessages" style="height:35px;"></div>
-          <div id="container"></div>
+          <div id="baseContainer"></div>
     </fieldset>
 
     <fieldset><!-- <legend>Base Max Speed</legend> -->
@@ -113,29 +100,13 @@
 		<script>
 			//console.log("touchscreen is", VirtualJoystick.touchScreenAvailable() ? "available" : "not available");
 	
-			var joystick	= new VirtualJoystick({
+			/*var joystick	= new VirtualJoystick({
 				container	: document.getElementById('container'),
 				mouseSupport	: true,
-			});			joystick.addEventListener('touchStart', function(){
-				console.log('down')
-			})
-			joystick.addEventListener('touchEnd', function(){
-				console.log('up')
-			})
-
-			setInterval(function(){
-	
-			    var rad = Math.atan2(joystick.deltaY(), joystick.deltaX());
-			    move(-joystick.deltaY()/100,-joystick.deltaX()/100);
-				var outputEl	= document.getElementById('result');
-				outputEl.innerHTML	= '<b>Result:</b> '
-					+ ' dx:'+joystick.deltaX()
-					+ ' dy:'+joystick.deltaY()
-					+ (joystick.right()	? ' right'	: '')
-					+ (joystick.up()	? ' up'		: '')
-					+ (joystick.left()	? ' left'	: '')
-					+ (joystick.down()	? ' down' 	: '')	
-			}, 1/30 * 1000);
+			});*/			
+      var joystick  = new Joystick();
+      
+			
 		</script>
 	</body>
 </html>
